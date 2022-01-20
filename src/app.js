@@ -1,22 +1,34 @@
-window.onload = function() {};
+/* eslint-disable */
+import "bootstrap";
+import "./style.css";
 
-const myForm = document.querySelector("#myForm");
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
 
-myForm.addEventListener("submit", e => {
-  e.preventDefault();
-  /*if (document.getElementById(but_Check).checked) {
-    document.getElementById(if_Check).style.display = "block";
-  } else document.getElementById(if_Check).style.display = "none";*/
-  console.log("El formulario ha sido enviado");
-});
+//write your code here
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  "use strict";
 
-const myformDom = document.querySelector("#myForm");
-/*myformDom.innerHTML = clickButtonCancel();*/
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll(".needs-validation");
+  let alert = document.querySelector(".myAlert");
 
-const clickButton = () => alert("Gracias!");
-const clickDom = document.querySelector("#clickButton");
-clickDom.innerHTML = clickButton();
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach(function(form) {
+    form.addEventListener(
+      "submit",
+      function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+          alert.classList.remove("dnone");
+          alert.classList.add("dshow");
+        }
 
-const clickButtonCancel = () => alert("¿Estas seguro de que quieres cancelar?");
-const clickcancelDom = document.querySelector("#clickButtonCancel");
-clickcancelDom.innerHTML = clickButtonCancel();
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
