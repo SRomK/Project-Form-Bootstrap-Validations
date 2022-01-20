@@ -1,11 +1,22 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+window.onload = function() {};
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const myForm = document.querySelector("#myForm");
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+myForm.addEventListener("submit", e => {
+  e.preventDefault();
+  /*if (document.getElementById(but_Check).checked) {
+    document.getElementById(if_Check).style.display = "block";
+  } else document.getElementById(if_Check).style.display = "none";*/
+  console.log("El formulario ha sido enviado");
+});
+
+const myformDom = document.querySelector("#myForm");
+/*myformDom.innerHTML = clickButtonCancel();*/
+
+const clickButton = () => alert("Gracias!");
+const clickDom = document.querySelector("#clickButton");
+clickDom.innerHTML = clickButton();
+
+const clickButtonCancel = () => alert("¿Estas seguro de que quieres cancelar?");
+const clickcancelDom = document.querySelector("#clickButtonCancel");
+clickcancelDom.innerHTML = clickButtonCancel();
